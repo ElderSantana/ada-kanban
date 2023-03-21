@@ -1,0 +1,14 @@
+<a class="{{list}}-item">
+  <i class="bi bi-pencil float-end" (click)="openEditCardModal(card, list)"></i>
+  <h2>{{card.titulo}}</h2>
+  <p>{{card.conteudo}}</p>
+  <div class="row">
+    <div class="col ">
+      <i class="bi bi-arrow-left-square" (click)="changePrevCardStatus()"></i>
+      <i class="bi bi-arrow-right-square" (click)="changeNextCardStatus()"></i>
+    </div>
+    <div class="col text-end">
+      <i class="bi bi-trash3" (click)="openRemoveCardModal(card, list)"></i>
+    </div>
+  </div>
+</a>

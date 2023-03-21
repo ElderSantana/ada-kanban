@@ -1,0 +1,82 @@
+<div class="main p-4">
+  <div class="container">
+    <img src="https://ada-site-frontend.s3.sa-east-1.amazonaws.com/home/header-logo.svg" alt="Ada Tech">
+    <button class="btn {{authenticated ? 'btn-info' : 'btn-primary'}}  mb-3 ml-4 float-end" type="button"  (click)="login()">
+      <i class="bi bi-person-circle"></i>
+      <p>{{authenticated ? 'Bem-vindo' : 'Entrar'}}</p>
+    </button>
+
+    <div class="heading text-center mb-5">
+      <h1 class="green">Kanban Board</h1>
+    </div>
+
+    <button class="btn btn-primary mb-3" type="button" (click)="openAddCardModal()">
+      <i class="bi bi-plus-circle"></i>
+    </button>
+    <div class="row">
+      <div class="col-md-12">
+        <alert type="info" [dismissOnTimeout]="7000" [dismissible]="true" *ngIf="!authenticated">
+          <strong>Atenção!</strong> Você precisa efeturar login para utilizar este quadro.
+        </alert>
+      </div>
+      <div class="col-md-4">
+        <div class="card text-bg-light mb-3 todo-list">
+          <div class="card-header bg-info"><h5 > To Do</h5></div>
+          <div class="card-body">
+            <ul>
+              <li *ngFor="let card of todo">
+                <app-card
+                  [card]="card"
+                  [list]="'todo'"
+                  [nextStatus]="newStatusDoing"
+                  (loadCards)="loadCards()"
+                >
+                </app-card>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card text-bg-light mb-3 doing-list">
+          <div class="card-header bg-secondary"><h5>Doing</h5></div>
+          <div class="card-body">
+            <ul>
+              <li *ngFor="let card of doing">
+                <app-card
+                  [card]="card"
+                  [list]="'doing'"
+                  [prevStatus]="newStatusTodo"
+                  [nextStatus]="newStatusDone"
+                  (loadCards)="loadCards()"
+                >
+                </app-card>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card text-bg-light mb-3 done-list">
+          <div class="card-header bg-success"><h5>Done</h5></div>
+          <div class="card-body">
+            <ul>
+              <li *ngFor="let card of done">
+                <app-card
+                  [card]="card"
+                  [list]="'done'"
+                  [prevStatus]="newStatusDoing"
+                  (loadCards)="loadCards()"
+                >
+                </app-card>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

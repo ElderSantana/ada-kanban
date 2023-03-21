@@ -1,0 +1,22 @@
+.modal-content {
+  border-radius: 0;
+  color: #fff;
+
+  &.todo {
+    background: rgb(115, 150, 196);
+  }
+  &.doing {
+    background: rgb(183, 183, 190);
+
+  }
+  &.done {
+    background:rgb(131, 224, 154);
+  }
+  .close {
+    &:hover {
+      color: darkorange;
+    }
+    font-size: 24px;
+    color: #fff;
+  }
+}

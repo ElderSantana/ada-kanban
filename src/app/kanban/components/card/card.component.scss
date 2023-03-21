@@ -1,0 +1,45 @@
+
+a {
+  &:hover, &:focus {
+    box-shadow:10px 10px 7px rgba(0,0,0,.7);
+    transform: scale(1.25) !important;
+    position:relative;
+    z-index:5;
+    background: red;
+  }
+
+   &:focus{
+    box-shadow:10px 10px 7px rgba(0,0,0,.7);
+    transform: scale(1.25);
+    position:relative;
+    z-index:5;
+  }
+
+  text-decoration:none;
+  color:#000;
+  display:block;
+  min-height:10em;
+
+  padding:1em;
+  box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  transform: rotate(-6deg);
+  transition: transform .15s linear;
+
+  &.todo-item {
+    background: rgb(115, 150, 196);
+  }
+  &.doing-item {
+    background: rgb(183, 183, 190);
+  }
+  &.done-item {
+    background:rgb(131, 224, 154)
+  }
+
+  .bi {
+    font-size: 24px;
+    padding: 5px;
+    cursor: pointer;
+  }
+}
+
+

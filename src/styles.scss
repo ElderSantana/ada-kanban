@@ -1,1 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+@import url('node_modules/bootstrap-icons/font/bootstrap-icons.css');
+
+/* Importing Bootstrap SCSS file. */
+@import "./node_modules/bootstrap/scss/bootstrap";
+
+/* Importing Datepicker SCSS file. */
+@import "node_modules/ngx-bootstrap/datepicker/bs-datepicker";
+
+
+// @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+// custom
+
+input, .form-control {
+  border-radius: 0;
+}
+
+.btn {
+  border-radius: 0;
+}
+.green-bg {
+  background-color: rgb(166, 247, 80);
+}
+.green {
+  color: rgb(166, 247, 80);
+}
+
+.border-todo {
+  border-bottom: 5px solid rgba(var(--bs-info-rgb));
+}
+
+.border-doing {
+  border-bottom: 5px solid rgba(var(--bs-secondary-rgb));
+}
+
+.border-done {
+  border-bottom: 5px solid rgb(166, 247, 80);
+}
